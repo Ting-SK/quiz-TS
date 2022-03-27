@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
 type Props = {
-//   question: string
-//   answers: string[]
+  question: string
+  answers: string[]
   callback: any
   userAnswer: any
   questionNr: number
@@ -10,8 +10,8 @@ type Props = {
 }
 
 const QuestionCard: FC<Props> = ({
-//   question,
-//   answers,
+  question,
+  answers,
   callback,
   userAnswer,
   questionNr,
@@ -22,18 +22,18 @@ const QuestionCard: FC<Props> = ({
       <p className='number'>
         Questions: {questionNr} / {totalQuestions}
       </p>
-      {/* <p dangerouslySetInnerHTML={{ __html: question }}></p> */}
-      {/* <div>
+      <p dangerouslySetInnerHTML={{ __html: question }}></p>
+      <div>
         {answers.map((answer) => {
           return (
-            <div>
-              <button disabled={userAnswer} onClick={callback}>
+            <div key={answer}>
+              <button disabled={userAnswer} value={answer} onClick={callback}>
                 <span dangerouslySetInnerHTML={{ __html: answer }} />
               </button>
             </div>
           )
         })}
-      </div> */}
+      </div>
     </div>
   )
 }
